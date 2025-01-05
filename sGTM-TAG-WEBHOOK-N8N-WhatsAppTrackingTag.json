@@ -1,0 +1,710 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2025-01-05 20:33:11",
+    "containerVersion": {
+        "path": "accounts/6075018731/containers/203315652/versions/0",
+        "accountId": "6075018731",
+        "containerId": "203315652",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6075018731/containers/203315652",
+            "accountId": "6075018731",
+            "containerId": "203315652",
+            "name": "lopesbahia.com.br - SERVER",
+            "publicId": "GTM-NNPZ4MBX",
+            "usageContext": [
+                "SERVER"
+            ],
+            "fingerprint": "1736098695839",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6075018731/containers/203315652/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": true,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": true
+            },
+            "tagIds": [
+                "GTM-NNPZ4MBX"
+            ],
+            "taggingServerUrls": [
+                "https://krjsiixh.sac.stape.io"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "tagId": "28",
+                "name": "[N8N] Webhook Whatsapp Tracking",
+                "type": "http_request",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "headers",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "Content-Type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "application/json"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "requestBody",
+                        "value": "{\n  \"userData\": {\n    \"userWhatsAppID\": \"{{ed | user_id_whatsapp}}\",\n    \"userEmailAddress\": \"{{ed | email}}\",\n    \"userFullName\": \"{{ed | name}}\"\n  },\n  \n  \"geolocationData\": {\n    \"city_address\": \"{{ed | city}}\",\n    \"state_address\": \"{{ed | state}}\",\n    \"country_address\": \"{{ed | country}}\",\n    \"ip_address\": \"{{ed | client_ip_address}}\"\n  },\n  \n  \"timeData\": {\n    \"current_time\": \"{{ed | current_time}}\",\n    \"primal_time\": \"{{ed | first_access_date}}\"\n  },\n  \n  \"fbc\": \"{{ed | fbc}}\",\n  \"fbp\": \"{{ed | fbp}}\",\n  \"userID\": \"{{ed | ga_user_id}}\",\n  \"externalID\": \"{{ed | external_id}}\",\n  \"domain\": \"{{ed | dominio}}\",\n  \n  \"urlParams\": {\n    \"utm_source\": \"{{ed | current_source}}\",\n    \"utm_medium\": \"{{ed | current_medium}}\",\n    \"utm_campaign\": \"{{ed | current_campaign}}\",\n    \"utm_content\": \"{{ed | current_content}}\",\n    \"utm_term\": \"{{ed | current_term}}\"\n  },\n  \n  \"urlPrimalParams\": {\n    \"utm_source\": \"{{ed | primal_source}}\",\n    \"utm_medium\": \"{{ed | primal_medium}}\",\n    \"utm_campaign\": \"{{ed | primal_campaign}}\",\n    \"utm_content\": \"{{ed | primal_content}}\",\n    \"utm_term\": \"{{ed | primal_term}}\"\n  }             \n}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "httpMethod",
+                        "value": "POST"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "url",
+                        "value": "add your url (https://academiadetrackeamento.com.br)"
+                    }
+                ],
+                "fingerprint": "1736104033831",
+                "firingTriggerId": [
+                    "29"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "triggerId": "29",
+                "name": "WhatsAppTrackingTag",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "WhatsAppTrackingTag"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Client Name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "GA4"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1736103336961"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "4",
+                "name": "ed | user_id_whatsapp",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "user_id_whatsapp"
+                    }
+                ],
+                "fingerprint": "1736101015169",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "5",
+                "name": "ed | current_time",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "current_time"
+                    }
+                ],
+                "fingerprint": "1736103551140",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "6",
+                "name": "ed | ga_user_id",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "ga_user_id"
+                    }
+                ],
+                "fingerprint": "1736101055874",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "7",
+                "name": "ed | email",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "email"
+                    }
+                ],
+                "fingerprint": "1736101070268",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "8",
+                "name": "ed | name",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "name"
+                    }
+                ],
+                "fingerprint": "1736101081166",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "9",
+                "name": "ed | city",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "city"
+                    }
+                ],
+                "fingerprint": "1736101094922",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "10",
+                "name": "ed | state",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "state"
+                    }
+                ],
+                "fingerprint": "1736101105498",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "11",
+                "name": "ed | country",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "country"
+                    }
+                ],
+                "fingerprint": "1736101116174",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "12",
+                "name": "ed | external_id",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "external_id"
+                    }
+                ],
+                "fingerprint": "1736101127358",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "13",
+                "name": "ed | client_ip_address",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "client_ip_address"
+                    }
+                ],
+                "fingerprint": "1736101137804",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "14",
+                "name": "ed | fbc",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "fbc"
+                    }
+                ],
+                "fingerprint": "1736101147992",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "15",
+                "name": "ed | fbp",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "fbp"
+                    }
+                ],
+                "fingerprint": "1736101159631",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "16",
+                "name": "ed | dominio",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "dominio"
+                    }
+                ],
+                "fingerprint": "1736101170311",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "17",
+                "name": "ed | first_access_date",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "first_access_date"
+                    }
+                ],
+                "fingerprint": "1736101214729",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "18",
+                "name": "ed | current_source",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "current_source"
+                    }
+                ],
+                "fingerprint": "1736101229572",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "19",
+                "name": "ed | current_medium",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "current_medium"
+                    }
+                ],
+                "fingerprint": "1736101243377",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "20",
+                "name": "ed | current_campaign",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "current_campaign"
+                    }
+                ],
+                "fingerprint": "1736101254446",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "21",
+                "name": "ed | current_content",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "current_content"
+                    }
+                ],
+                "fingerprint": "1736101264983",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "22",
+                "name": "ed | current_term",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "current_term"
+                    }
+                ],
+                "fingerprint": "1736101277418",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "23",
+                "name": "ed | primal_source",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "primal_source"
+                    }
+                ],
+                "fingerprint": "1736101288032",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "24",
+                "name": "ed | primal_medium",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "primal_medium"
+                    }
+                ],
+                "fingerprint": "1736101297981",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "25",
+                "name": "ed | primal_campaign",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "primal_campaign"
+                    }
+                ],
+                "fingerprint": "1736101309254",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "26",
+                "name": "ed | primal_content",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "primal_content"
+                    }
+                ],
+                "fingerprint": "1736101319421",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "variableId": "27",
+                "name": "ed | primal_term",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "primal_term"
+                    }
+                ],
+                "fingerprint": "1736101330851",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            },
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "type": "CLIENT_NAME",
+                "name": "Client Name"
+            }
+        ],
+        "fingerprint": "1736109191480",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6075018731/containers/203315652/versions/0?apiLink=version",
+        "client": [
+            {
+                "accountId": "6075018731",
+                "containerId": "203315652",
+                "clientId": "1",
+                "name": "GA4",
+                "type": "gaaw_client",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "activateDefaultPaths",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieManagement",
+                        "value": "server"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieName",
+                        "value": "FPID"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookiePath",
+                        "value": "/"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieMaxAgeInSec",
+                        "value": "63072000"
+                    }
+                ],
+                "fingerprint": "1736078641062"
+            }
+        ]
+    }
+}
