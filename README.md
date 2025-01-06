@@ -8,6 +8,9 @@
 <br>
 ✉️ - Endereço EXCLUSIVO para contratação de serviços: raylan.gig@gmail.com.
 
+![01](https://github.com/user-attachments/assets/e09757d8-b0c8-4a57-94d7-71cdc9a0917c)
+![02](https://github.com/user-attachments/assets/ddd4326d-f7fa-41d1-93ba-9f40409c3f83)
+
 # Basic Info
 
 Note|Description
