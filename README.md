@@ -12,7 +12,7 @@
 
 Note|Description
 :----|:----
-Supported GTM Side|Web and Server.
+Supported GTM Side|WEB and SERVER.
 
 - Release date: 05/01/2025
 - Current tagging server version: 2.4.0
@@ -32,7 +32,7 @@ Supported GTM Side|Web and Server.
 
 TAG|Description
 :----|:----
-HTTP Request(https://github.com/stape-io/json-http-request-tag)|Required to send requests to n8n
+[HTTP Request](https://github.com/stape-io/json-http-request-tag)|Required to send requests to n8n
 Google Analytics: evento do GA4|Use the standard tag or use a [Stape GA4 Advanced tag](https://github.com/stape-io/ga4-advanced-tag).
 
 # Other (not included)
