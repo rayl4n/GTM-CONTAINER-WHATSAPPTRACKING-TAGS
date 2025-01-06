@@ -14,8 +14,8 @@ Note|Description
 :----|:----
 Supported GTM Side|Web and Server.
 
-- Current tagging server version: 2.4.0
 - Release date: 05/01/2025
+- Current tagging server version: 2.4.0
 
 # Basic Steps
 
