@@ -32,7 +32,7 @@ Supported GTM Side|Web and Server.
 
 TAG|Description
 :----|:----
-[HTTP Request](https://github.com/stape-io/json-http-request-tag)|Required to send requests to n8n
+HTTP Request(https://github.com/stape-io/json-http-request-tag)|Required to send requests to n8n
 Google Analytics: evento do GA4|Use the standard tag or use a [Stape GA4 Advanced tag](https://github.com/stape-io/ga4-advanced-tag).
 
 # Other (not included)
@@ -42,8 +42,8 @@ Triggers, variables and folders
 ### Trigger
 Trigger|Description
 :----|:----
-[gtm.dom / visitor-api-success]|Triggered when loading the visitor-api-success event in order to capture the visitor's geolocation data
-[WhatsAppTrackingTag]|Same name used at the GA4 event.
+gtm.dom / visitor-api-success|Triggered when loading the visitor-api-success event in order to capture the visitor's geolocation data
+WhatsAppTrackingTag|Same name used at the GA4 event.
 
 ### Variables
 Variable|Description
